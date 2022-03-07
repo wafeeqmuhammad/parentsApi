@@ -140,7 +140,7 @@ class GeneralController extends Controller
 
         if (@$_GET['balanceMin'] && @$_GET['balanceMax']) {
             foreach($fileContent as $objfileContent){
-                if($objfileContent['balance'] >= @$_GET['balanceMin'] && $objfileContent['balance'] <= @$_GET['balanceMax']){
+                if(@$objfileContent['balance'] >= @$_GET['balanceMin'] && @$objfileContent['balance'] <= @$_GET['balanceMax']){
                         $filter_array[] = $objfileContent;
                 }
             }
@@ -148,7 +148,7 @@ class GeneralController extends Controller
 
         elseif (@$_GET['balanceMin']) {
             foreach($fileContent as $objfileContent){
-                if($objfileContent['balance'] >= @$_GET['balanceMin']){
+                if(@$objfileContent['balance'] >= @$_GET['balanceMin']){
                     $filter_array[] = $objfileContent;
                 }
             }
@@ -156,7 +156,7 @@ class GeneralController extends Controller
 
         elseif (@$_GET['balanceMax']) {
             foreach($fileContent as $objfileContent){
-                if($objfileContent['balance'] <= @$_GET['balanceMax']){
+                if(@$objfileContent['balance'] <= @$_GET['balanceMax']){
                     $filter_array[] = $objfileContent;
                 }
             }
