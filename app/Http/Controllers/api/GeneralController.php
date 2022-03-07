@@ -91,7 +91,7 @@ class GeneralController extends Controller
             if($statusCode =='authorised'){
                 
                 foreach($fileContent as $objfileContent){
-                    if($objfileContent['statusCode']==1){
+                    if(@$objfileContent['statusCode']==1){
                         $filter_array[]= $objfileContent;
                     }
                 }
@@ -100,7 +100,7 @@ class GeneralController extends Controller
             if($statusCode =='decline'){
                 
                 foreach($fileContent as $objfileContent){
-                    if($objfileContent['statusCode']==2){
+                    if(@$objfileContent['statusCode']==2){
                         $filter_array[]= $objfileContent;
                     }
                 }
@@ -109,7 +109,7 @@ class GeneralController extends Controller
             if($statusCode =='refunded'){
                 
                 foreach($fileContent as $objfileContent){
-                    if($objfileContent['statusCode']==3){
+                    if(@$objfileContent['statusCode']==3){
                         $filter_array[]= $objfileContent;
                     }
                 }
@@ -125,7 +125,7 @@ class GeneralController extends Controller
         if(@$_GET['currency']){
             $currency = $_GET['currency'];
                 foreach($fileContent as $objfileContent){
-                    if($objfileContent['currency'] == $currency){
+                    if(@$objfileContent['currency'] == $currency){
                         $filter_array[] = $objfileContent;
 
                     }
